@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html>
+  <form action = "/auth">
+    Favorite food:
+    <input type = "text" name="yourfood"><br>
+    <input type = "submit" value="Submit">
+  </form>
+</html>

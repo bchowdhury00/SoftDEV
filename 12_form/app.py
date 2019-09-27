@@ -1,6 +1,6 @@
 #Biraj Chowdhury and Taejoon Kim Team Excelcius
 #SoftDev1 pd 9
-#K12 <Rise The Tide/Html forms/Using the request methods and html forms>
+#K12 <Echo Echo EchoRise The Tide/Html forms/Using the request methods and html forms>
 #2019 09 26
 
 from flask import Flask, render_template, request

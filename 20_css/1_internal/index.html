@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Biraj  Chowdhury and Henry Liu
+       SoftDev pd9
+       K20 -- CSS basics
+       2019-11-01f
+
+	 WORK FILE for CSS 	
+    -->
+
+  <head>
+    <meta charset="utf-8"/>
+    <title>foo title</title>
+    <style>
+      body {
+	  background-color:SlateGray;
+      }
+      h1 {
+	  text-align:center;
+	  color:white;
+      }
+      .bigBox{
+	  display:block;
+	  overflow:auto;
+      }
+      
+      #title{
+	  display:block;
+	  overflow:auto;
+	  background-color:LightGray;
+      }
+      #content{
+	  background-color:DarkGray;
+	  display:block;
+	  overflow:auto;
+      }
+      #sidebar{
+	  float:left;
+	  width:150px;
+	  padding:10px;
+      }
+      ul{
+	  list-style-type:none;
+      }
+      li{
+	  list-style-type:none;
+      }
+      a{
+	  color:white;
+	  text-decoration:none;
+      }
+      #stuff{
+	  float:right;
+	  width:1000px;
+	  padding:10px;
+      }
+      #bottom{
+	  background-color:DimGrey;
+	  display:block;
+	  overflow:auto;
+	  text-align:right;
+	  padding:10px;
+	  color:silver;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="bigBox">
+      <div id="title">
+	<h1>foo heading 1</h1>
+      </div>
+      <div id="content">
+	<div id="sidebar">
+	  <h3>nav foo</h3>
+	  <ul>
+	    <li><a href="">dis</a></li>
+	    <li><a href="">dat</a></li>
+	    <li><a href="">de udda ting</a></li>
+	  </ul>
+	</div>
+	<div id="stuff">
+	  <h2>main foo heading</h2>
+	  <p>tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk tk </p>
+	    <br>
+	    <br>
+	</div>
+      </div>
+      <div id="bottom">
+	Copyright &copy; 2016 Clyde "Thluffy" Sinclair
+      </div>
+    </div>
+  </body>
+
+</html>

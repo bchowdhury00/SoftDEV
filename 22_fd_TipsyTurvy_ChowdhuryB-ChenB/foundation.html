@@ -13,10 +13,21 @@
       SoftDev pd 9<br>
       K22--FrameWork/Foundation/Not the makeup<br>
       2019 11 05<br>
-      </p>
+    </p>
+    <h5>To get started with Foundation, download the Foundation file from their  webite:
+      <a href="https://foundation.zurb.com/">Foundation</a>
+      <br>
+      <br>
+      You start with a file containing a begining index.html file and a css and javascript folder. In the css folder, you have a foundation.css file set with all the defaults that foundation provides, such as the grid structure and the basic form elements demonstrated below. You are also given an empty app.css file that you can use to override or add onto the defaults.
+    </h5>
+    <br>
+    <h4>Features</h4>
+    <br>
       <h5>Foundation uses a 12 cell grid system demonstrated below:</h5>
+      </p>
+      <br><br><br>
+      <h4>Foundation uses a 12 cell grid system demonstrated below:</h4>
       <!-- Grid Example -->
-
       <div class="grid-x grid-padding-x">
         <div class="large-12 cell">
           <div class="primary callout">
@@ -138,7 +149,8 @@
           </div>
         </div>
       </div>
-      <h5> Foundation also allows for easily usable forms inside the grid</h5>
+      <br><br><br>
+      <h4> Foundation also allows for easily usable forms inside the grid</h4>
       <div class="grid-x grid-padding-x">
               <div class="large-12 cell">
                 <label>Your favorite sound effect</label>
@@ -160,8 +172,86 @@
               <div class="large-6 medium-6 cell">
                 <label>More About that</label>
                 <input id="checkbox1" type="checkbox"><label for="checkbox1">WALDOS NOT REAL</label>
-                <input id="checkbox2" type="checkbox"><label for="checkbox2">WALDO AN IDIOT</label>
+                <input id="checkbox2" type="checkbox"><label for="checkbox2">HUH???</label>
               </div>
+      </div>
+      <br>
+      <h5> On top of these forms, foundation provides the backbone for far more complex forms and features that are accessible on their website by going to the Building Blocks page:
+	<a href= "https://foundation.zurb.com/building-blocks/">Building Blocks</a>
+	<br>
+	These extra forms can be accessed in two ways. You can use the Foundation CDI, which is easily downloadable from their website with ample tutorials on how to use it. Or you can copy the css code provided into your app.css folder, and then copy the html and refactor as necessary. A few examples of this is shown below.
+      </h5>
+      <br><br><br>
+            <h4>This is a top bar with 3 buttons and a search bar. You can add a dropdown menu to one of the buttons but that<br>
+         would require JavaScript:</h4>
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text">About Pokemons:</li>
+            <li>
+              <a href="#">Bulbasaur</a>
+            </li>
+            <li><a href="#">Squirtle</a></li>
+            <li><a href="#">Charmander</a></li>
+          </ul>
+        </div>
+        <div class="top-bar-right">
+          <ul class="menu">
+            <li><input type="search" placeholder="Search"></li>
+            <li><button type="button" class="button">Search</button></li>
+          </ul>
+        </div>
+      </div>
+      <br><br><br>
+      <h4>This is a menu with four different options:</h4>
+      <ul class="menu align-center">
+        <li><a href="#">Thing One</a></li>
+        <li><a href="#">Thing Two</a></li>
+        <li><a href="#">Thing Three</a></li>
+        <li><a href="#">Thing Four</a></li>
+      </ul>
+      <br><br><br>
+      <h4>This is the same menu but vertical:</h4>
+      <ul class="vertical menu">
+        <li><a href="#">Thing One</a></li>
+        <li><a href="#">Thing Two</a></li>
+        <li><a href="#">Thing Three</a></li>
+        <li><a href="#">Thing Four</a></li>
+      </ul>
+      <br>
+      <br>
+      <p>Here is a hover underline menu</p>
+      <nav class="hover-underline-menu" data-menu-underline-from-center>
+	<ul class="menu align-center">
+	  <li><a href="#">One</a></li>
+	  <li><a href="#">Two</a></li>
+	  <li><a href="#">Three</a></li>
+	  <li><a href="#">Four</a></li>
+	</ul>
+      </nav>
+      <br>
+      <br>
+            </div><br><br><br>
+            <h4>You can add alerts with a close buttons as displayed below:</h4>
+            <div class="callout" data-closable>
+        <p>You can try to close this message.</p>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="success callout" data-closable>
+        <p>This message is immortal.</p>
+        <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <br><br><br>
+            <div class="large-4 medium-4 cell">
+              <h4>There are four different types of buttons available:</h4>
+              <p><a href="#" class="button">Simple Button</a><br/>
+              <a href="#" class="success button">Success Button</a><br/>
+              <a href="#" class="alert button">Alert Button</a><br/>
+              <a href="#" class="secondary button">Secondary Button</a></p>
             </div>
   </body>
 </html>

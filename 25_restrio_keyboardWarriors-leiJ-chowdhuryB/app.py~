@@ -1,0 +1,17 @@
+from urllib.request import urlopen
+from flask import Flask, render_template
+import json
+app = Flask(__name__)
+
+@app.route("/")
+def hello_world():
+    url = urlopen(
+        "http://api.citybik.es/v2/networks"
+        )
+    response = url.read()
+    data = json.loads(response)
+    return render_template('index.html',text=data['explanation'],pic = data['url'])
+
+if __name__ == "__main__":
+    app.debug = True
+    app.run()

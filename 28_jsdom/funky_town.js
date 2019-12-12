@@ -1,8 +1,8 @@
 /*
-Team prefix -- Manfred Tan, Biraj Chowdhury, and Tammy Chen
+Team prefix --  Biraj Chowdhury and Kazi Jamal
 SoftDev1 pd9
-K27 -- Sequential Progression
-2019-12-10
+K28 -- Electric Bungaloo
+2019-12-11
 */
 
 
@@ -31,19 +31,57 @@ var gcd = function(a,b){
   }
   if (a % b == 0) return b;
   return gcd(a-b, b);
-}
+};
 
-students = ['Manfred', 'Biraj', 'Tammy', 'Fluffy', 'Unicorn']
+var students = ['Manfred', 'Biraj', 'Tammy', 'Fluffy', 'Unicorn'];
 
 var randomStudent = function(){
   var index = Math.floor(Math.random() * students.length);
   return students[index];
 };
 
-var printToConsole = function(){
+var printToConsoleFib = function(){
     var ans = fibonacci(8);
     console.log(ans);
+    showoutput(ans)
+};
+
+var printToConsoleFact = function(){
+    var ans = factorial(7);
+    console.log(ans);
+    showoutput(ans)
+};
+
+var printToConsoleRand = function(){
+    var ans = randomStudent();
+    console.log(ans);
+    showoutput(ans);
+
+}
+
+var printToConsoleGreat = function(){
+    var ans = gcd(1115,45);
+    console.log(ans);
+    showoutput(ans);
 };
 
 var huh = document.getElementById("a");
-huh.addEventListener('click',printToConsole);
+var what = document.getElementById("b");
+var err = document.getElementById("c");
+var areyousure = document.getElementById("d");
+var output = document.getElementById("e");
+
+var answers = []
+
+var showoutput = function(n){
+    if (answers.length > 0)
+	answers.pop();
+    answers.push(n);
+    output.append(answers);
+};
+    
+
+huh.addEventListener('click',printToConsoleFib);
+what.addEventListener('click',printToConsoleFact);
+err.addEventListener('click',printToConsoleRand);
+areyousure.addEventListener('click',printToConsoleGreat);

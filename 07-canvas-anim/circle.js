@@ -11,7 +11,9 @@ var stop = function(requestid){
   window.cancelAnimation(requestid);
 }
 
-var animation = function()
+var animation = function(){
+  
+}
 
 
 var clear = document.getElementById("clear");

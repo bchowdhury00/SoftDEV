@@ -1,5 +1,16 @@
-var c = document.getElementById('playground');
-var ctx = c.getContext('2d')
+//Biraj Chowdhury, Vishwaa Sofat
+// SoftDev1 pd9
+// K7 -- ...They lock us in the tower whenever we get caught
+// 2020-02-12
+
+var c = document.getElementById("playground");
+var anim = document.getElementById("animan");
+var stop = document.getElementById("stop");
+var ctx = c.getContext('2d');
+
+var increase = true;
+var radius = 0;
+
 var circle = function(s){
   ctx.beginPath();
   ctx.arc(300,300, s, 0, 2 * Math.PI);
@@ -7,15 +18,26 @@ var circle = function(s){
   ctx.fill();
 }
 
-var stop = function(requestid){
-  window.cancelAnimation(requestid);
+var lastReq = null;
+
+var animate = function(time){
+    if (radius >= 300){
+        increase = false;
+    }
+    if (radius <= 0){
+        increase = true;
+    }
+    if (increase){
+        ctx.clearRect(0, 0, c.width, c.height);
+        radius += 1;
+        circle(radius);
+    }
+    else{
+        ctx.clearRect(0, 0, c.width, c.height);
+        radius -= 1;
+        circle(radius);
+    }
+    lastReq = window.requestAnimationFrame(animate);
 }
-
-var animation = function(){
-  
-}
-
-
-var clear = document.getElementById("clear");
-clear.addEventListener("click", function(){ctx.clearRect(0, 0, c.width, c.height);});
-c.addEventListener("mousedown", function(){circle()});
+anim.addEventListener("click", function(){window.requestAnimationFrame(animate)});
+stop.addEventListener("click",function(){window.cancelAnimationFrame(lastReq)});

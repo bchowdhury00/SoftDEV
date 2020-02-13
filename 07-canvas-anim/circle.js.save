@@ -22,7 +22,6 @@ var circle = function(s){
 var lastReq = null;
 
 var animate = function(time){
-    animationStarted = true;
     if (radius >= 300){
         increase = false;
     }
@@ -41,15 +40,5 @@ var animate = function(time){
     }
     lastReq = window.requestAnimationFrame(animate);
 }
-
-anim.addEventListener("click", function(){
-	if (animationStarted == false){
-		animationStarted = true;
-		animate();
-	}
-
-});
-stop.addEventListener("click",function(){
-	animationStarted = false;
-	window.cancelAnimationFrame(lastReq)
-});
+anim.addEventListener("click", function(){animate()});
+stop.addEventListener("click",function(){window.cancelAnimationFrame(lastReq)});

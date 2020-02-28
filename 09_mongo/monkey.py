@@ -1,6 +1,7 @@
 
 from pymongo import MongoClient 
 from bson.json_util import loads
+import pprint
 client = MongoClient('localhost',27017)
 db = client['database']
 restaurants = db['restaurants']
@@ -13,5 +14,7 @@ def fillCollection():
     for i in range(len(data)):
         restaurants.insert_one(loads(data[i]))
     return
-fillCollection()    
+
+pprint.pprint(restaurants.find_one({"borough" : "Queens"}))
+pprint.pprint(restaurants.find_one({"address.zipcode":"11377"}))
  

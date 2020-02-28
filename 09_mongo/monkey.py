@@ -17,4 +17,6 @@ def fillCollection():
 
 pprint.pprint(restaurants.find_one({"borough" : "Queens"}))
 pprint.pprint(restaurants.find_one({"address.zipcode":"11377"}))
- 
+c = restaurants.find({"grades" : { "score": { "$gt" :10}} })
+for doc in c:
+    print(doc)

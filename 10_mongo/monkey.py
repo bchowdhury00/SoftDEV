@@ -3,6 +3,12 @@
 # K10: Import/Export Bank
 # 2020-03-04
 
+'''
+The dataset contains all nobel prize winners & their research. It includes information such as the year & category of the award. 
+LINK: http://api.nobelprize.org/v1/prize.json
+For our import mechanism, we read the dataset into a list and then used the imported json library to convert the dataset into a dictionary, which is then inserted into the database. We also imported pprint, which makes the information easier to read when printed.  
+'''
+
 import pprint, json 
 from json import loads
 from pymongo import MongoClient
@@ -34,24 +40,28 @@ def findCategory(category):
     #pprint.pprint(nobel.result)
     #for i in history.result.find({"event.date": date}):
     #    pprint.pprint(i)
+    #    print("hello")
 
 def findYear(year):
     output = []
     for i in nobel.find({"year" : year}):
         output.append(i)
     return pprint.pprint(output)
+    #print("Hello World")
 
 def findFirstName(fName):
     output  = []
     for i in nobel.find({"laureates.firstname" : fName}):
         output.append(i)
     return pprint.pprint(output)
+    #print("Hello World")
 
 def findLastName(lName):
     output = []
     for i in nobel.find({"laureates.surname" : lName}):
         output.append(i)
     return pprint.pprint(output)
+    #print("Hello World")
 
 #print(findCategory("chemistry"))
 #print(findYear("2018"))

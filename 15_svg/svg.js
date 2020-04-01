@@ -6,8 +6,9 @@ var extraButton = document.getElementById("extra");
 var animonoff = false;
 var xrate = 1;
 var yrate = 1;
-var animationid;
-var isextra;
+var animationid
+
+var isextra
 
 var clearsvg = function() {
   svg.innerHTML = '';

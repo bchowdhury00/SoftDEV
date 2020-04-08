@@ -1,0 +1,108 @@
+Calvin Chu, Biraj Chowdhury - Team McChargers
+SoftDev2 pd9
+2020-04-7
+
+#################
+## Transitions ##
+#################
+
+d3.select("body").transition()
+    .style("background-color", "black");
+- smooth transition to specified color
+
+- modifies only the specified attributes of selected document element
+- supports primitives + compound values
+- CSS3 transitions still work
+
+############################
+## Let's Make a Bar Chart ##
+############################
+
+const p = d3.selectAll("p");
+- allows you to query a selector and set it/them to a variable for later use/modifications
+
+const div = d3.create("div");
+- creates a HTML document element and sets it to a variable
+- returning the .node() of this variable will return the element so that you can append/display it
+
+d3.create("span")
+    .style("color", "white")
+    .style("background-color", "black")
+    .html("Hello, world!")
+  .node()
+- chaining methods allows you to apply multiple operations to an element at one time
+- it is important to keep track of what these methods return:
+  - site suggests 4 space indent for methods that return the current selection and 2 space indent for methods that return something else
+
+  {
+    const div = d3.create("div")
+        .style("font", "10px sans-serif")
+        .style("text-align", "right")
+        .style("color", "white");
+
+    div.selectAll("div")
+      .data(data)
+      .join("div")
+        .style("background", "steelblue")
+        .style("padding", "3px")
+        .style("margin", "1px")
+        .style("width", d => `${d * 10}px`)
+        .text(d => d);
+
+    return div.node();
+  }
+- takes what we learned to make a simple horizontal bar chart
+- .data computes enter, update, and exit selections
+- .join applies default logic for each and appends/removes elements accordingly
+
+  x = d3.scaleLinear()
+      .domain([0, d3.max(data)])
+      .range([0, 420])
+      {
+        const div = d3.create("div")
+            .style("font", "10px sans-serif")
+            .style("text-align", "right")
+            .style("color", "white");
+
+        div.selectAll("div")
+          .data(data)
+          .join("div")
+            .style("background", "steelblue")
+            .style("padding", "3px")
+            .style("margin", "1px")
+            .style("width", d => `${x(d)}px`)
+            .text(d => d);
+
+        return div.node();
+      }
+- Offers a way to scale the chart instead of using a magic number (10) to scale it
+- utilizes x, which calls scaleLinear(), which given a domain value returns a corresponding range value
+
+##############
+## D3 Intro ##
+##############
+
+- D3 is flexible -> low-level approach with composable primitives
+- known for animation + interaction
+- >30 modules, >1000 methods
+
+################
+## By Example ##
+################
+
+- examples serve as templates you can use to edit/learn from
+
+d3 = require("d3@5")
+[d3.min(values), d3.median(values), d3.max(values)]
+- you can require version5 of d3 to get min, median, max summary statistics
+
+import {chart as chart1} with {values as data} from "@d3/histogram"
+- you can use the with clause to substitute your own values as the data of the example
+
+height = 200
+import {chart as chart2} with {values as data, height} from "@d3/histogram"
+- x-axis and y-axis are customizable
+
+x = d3.scaleLinear([-10, 10], [margin.left, width - margin.right])
+import {chart as chart3, margin, width} with {x, values3 as data, height} from "@d3/histogram"
+- you can scale the chart as well

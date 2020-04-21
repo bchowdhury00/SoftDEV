@@ -1,0 +1,36 @@
+<!--
+Calvin Chu, Biraj Chowdhury - Team McChargers
+SoftDev2 pd9
+K18: Come Up For Air
+2020-04-20
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <!-- <link rel="stylesheet" type="text/css" href="../static/style.css"> -->
+    </head>
+
+    <body>
+        <button id="render">Render</button>
+        <button id="transition">Transition</button>
+        <br>
+        <div class="chart">
+        </div>
+        <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+        <script src="{{ url_for('static', filename='d3.js') }}"></script>
+    </body>
+
+    <ul id="moves">
+      {% for x in data %}
+      <li style="display:none;" id="{{x["country"]}}">{{x["country"]}},{{x["beer_servings"]}},{{x["spirit_servings"]}},{{x["wine_servings"]}},{{x["total_litres_of_pure_alcohol"]}}</li>
+      {% endfor %}
+    </ul>
+    <ul id="cats">
+      {% for x in cat %}
+      <li style="display:none;" id="{{x}}">{{x}}</li>
+      {% endfor %}
+    </ul>
+
+</html>
